@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HarassMap</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header>
+        <div class="logo">
+            <h1>HarassMap</h1>
+        </div>
+
+        <nav>
+            <button class="nav-btn" data-section="home">Home</button>
+            <button class="nav-btn" data-section="map">Safety Map</button>
+            <button class="nav-btn" data-section="report">Report</button>
+            <button class="nav-btn" data-section="about">About</button>
+        </nav>
+
+        <button id="login-btn">Login</button>
+    </header>
+
+
+    <!-- ================= HOME ================= -->
+    <main>
+
+        <section id="home">
+
+            <div class="hero">
+
+                <div class="hero-content">
+
+                    <h1>Your safety matters.</h1>
+
+                    <p>
+                        Report harassment anonymously, view reported incidents,
+                        and stay aware of your surroundings.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <button class="open-section"
+                                data-section="report">
+                            Report an Incident
+                        </button>
+
+                        <button class="open-section"
+                                data-section="map">
+                            View Safety Map
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- WHAT WE OFFER -->
+            <section class="offer-section">
+
+                <p class="section-label">WHAT HARASSMAP OFFERS</p>
+
+                <h2>Stay aware. Stay informed.</h2>
+
+                <div class="offer-cards">
+
+                    <div class="offer-card">
+                        <div class="offer-icon">📝</div>
+                        <h3>Anonymous Reporting</h3>
+                        <p>
+                            Report harassment without revealing
+                            unnecessary personal information.
+                        </p>
+                    </div>
+
+                    <div class="offer-card">
+                        <div class="offer-icon">🗺️</div>
+                        <h3>Safety Map</h3>
+                        <p>
+                            Explore reported incidents and
+                            identify patterns around locations.
+                        </p>
+                    </div>
+
+                    <div class="offer-card">
+                        <div class="offer-icon">📍</div>
+                        <h3>Location Awareness</h3>
+                        <p>
+                            Add the location of an incident
+                            to help visualize safety patterns.
+                        </p>
+                    </div>
+
+                    <div class="offer-card">
+                        <div class="offer-icon">🚨</div>
+                        <h3>Emergency Help</h3>
+                        <p>
+                            Quickly access emergency services
+                            when you need immediate assistance.
+                        </p>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section class="how-section">
+
+                <p class="section-label">HOW IT WORKS</p>
+
+                <h2>From experience to awareness.</h2>
+
+                <div class="steps">
+
+                    <div>
+                        <span>01</span>
+                        <h3>Report</h3>
+                        <p>Share what happened and where it occurred.</p>
+                    </div>
+
+                    <div>
+                        <span>02</span>
+                        <h3>Map</h3>
+                        <p>Your report becomes part of the safety map.</p>
+                    </div>
+
+                    <div>
+                        <span>03</span>
+                        <h3>Stay aware</h3>
+                        <p>Use the map to understand your surroundings.</p>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- FINAL CTA -->
+            <section class="home-cta">
+
+                <h2>Help make your surroundings more informed.</h2>
+
+                <button class="open-section"
+                        data-section="report">
+                    Report an Incident →
+                </button>
+
+            </section>
+
+        </section>
+
+        <!-- ================= SAFETY MAP ================= -->
+        <section id="map">
+            <button class="back-btn" data-section="home">
+                ← Back
+            </button>
+
+            <h2>Safety Map</h2>
+
+            <p>
+                Explore reported incidents in your area.
+            </p>
+
+            <div id="safety-map"></div>
+
+        </section>
+
+
+        <!-- ================= REPORT INCIDENT ================= -->
+        <section id="report">
+
+            <button class="back-btn" data-section="home">
+                ← Back
+            </button>
+
+            <h2>Report an Incident</h2>
+
+            <p>
+                Your report can help others stay aware of their surroundings.
+            </p>
+
+            <form id="report-form">
+
+                <label for="incident-type">What happened?</label>
+
+                <select id="incident-type" name="incident-type" required>
+                    <option value="">Select incident type</option>
+                    <option value="verbal">Verbal harassment</option>
+                    <option value="stalking">Stalking</option>
+                    <option value="physical">Physical harassment</option>
+                    <option value="online">Online harassment</option>
+                    <option value="other">Other</option>
+                </select>
+
+
+                <label for="description">Tell us what happened</label>
+
+                <textarea
+                    id="description"
+                    name="description"
+                    rows="5"
+                    placeholder="Describe the incident..."
+                    required>
+                </textarea>
+
+
+                <label for="location">Where did it happen?</label>
+
+                <input
+                    type="text"
+                    id="location"
+                    name="location"
+                    placeholder="Enter the location"
+                    required>
+
+
+                <button type="button" id="location-btn">
+                    Use My Current Location
+                </button>
+
+                <p class="location-help">
+        >            Enter where the incident happened. You can use your current
+                    location if you are currently at the incident location.
+                </p>
+
+                <label for="incident-date">When did it happen?</label>
+
+                <input
+                    type="date"
+                    id="incident-date"
+                    name="incident-date"
+                    required>
+
+                <button type="submit" id="submit-report">
+                    Submit Report
+                </button>
+
+            </form>
+
+            <p id="success-message"></p>
+
+        </section>
+
+        <!-- ================= ABOUT ================= -->
+        <section id="about">
+
+            <h2>About HarassMap</h2>
+
+            <p>
+                HarassMap is a community-based platform designed to
+                help people report harassment and understand patterns
+                of reported incidents in different areas.
+            </p>
+
+            <i>
+                Reports are used to create a visual representation
+                of reported incidents on the safety map.
+            </i>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+
+        <p>
+            © 2026 HarassMap
+        </p>
+
+        <p>
+            In an emergency, call 100.
+        </p>
+
+    </footer>
+
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+

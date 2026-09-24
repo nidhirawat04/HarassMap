@@ -1,0 +1,521 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F5EFEB;
+    color: #2F4156;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 20px 6%;
+
+    background-color: #FFFFFF;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+
+    border-bottom: 1px solid #C8D9E6;
+}
+
+.logo h1 {
+    font-size: 24px;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 500;
+    color: #2F4156;
+    cursor: pointer;
+    padding: 8px 0;
+    transition: color 0.3s ease;
+}
+
+.nav-btn:hover {
+    color: #6c63ff;
+}
+
+.back-btn {
+    align-self: flex-start;
+
+    background: none;
+    border: none;
+
+    color: #010a14;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    margin-bottom: 20px;
+}
+
+.back-btn:hover {
+    color: #567C8D;
+}
+
+#login-btn {
+    padding: 10px 20px;
+
+    border: none;
+    border-radius: 8px;
+
+   background-color: #2F4156;
+    color: #FFFFFF;
+
+    cursor: pointer;
+}
+
+#login-btn:hover {
+    opacity: 0.9;
+}
+
+
+#home {
+    display: block;
+    padding: 0;
+    background-color: #F5EFEB;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 620px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 80px 10%;
+
+    background-image:
+        linear-gradient(
+            rgba(200, 217, 230, 0.55),
+            rgba(200, 217, 230, 0.55)
+        ),
+        url("images/safety-bg.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    border-radius: 0 0 15% 5%;
+}
+
+.offer-section {
+    padding: 100px 10%;
+    text-align: center;
+    background: #FFFFFF;
+}
+
+.section-label {
+    color: #567C8D;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.offer-section h2 {
+    font-size: 42px;
+    color: #2F4156;
+    margin-bottom: 50px;
+}
+
+.offer-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.offer-card {
+    padding: 30px 20px;
+    background: #F5EFEB;
+    border-radius: 18px;
+}
+
+.offer-icon {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.offer-card h3 {
+    color: #2F4156;
+}
+
+.offer-card p {
+    color: #567C8D;
+    line-height: 1.6;
+}
+
+.how-section {
+    padding: 100px 10%;
+    text-align: center;
+    background: #C8D9E6;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.steps div {
+    padding: 25px;
+}
+
+.steps span {
+    font-size: 14px;
+    color: #567C8D;
+    font-weight: bold;
+}
+
+.steps h3 {
+    color: #2F4156;
+    font-size: 24px;
+}
+
+.steps p {
+    color: #2F4156;
+    line-height: 1.6;
+} 
+
+.home-cta {
+    padding: 100px 20px;
+    text-align: center;
+    background: #F5EFEB;
+}
+
+.home-cta h2 {
+    color: #2F4156;
+    font-size: 38px;
+    margin-bottom: 30px;
+}
+
+.home-cta button {
+    background: #2F4156;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+@media (max-width: 800px) {
+
+    .offer-cards {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 50px 6%;
+    }
+
+    .hero-content {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .offer-cards {
+        grid-template-columns: 1fr;
+    }
+} 
+
+#emergency {
+    background-color: #F5EFEB;
+}
+
+#emergency-btn {
+    padding: 16px 28px;
+
+    border: none;
+    border-radius: 10px;
+
+    background-color: #C0392B;
+    color: #FFFFFF;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+#emergency-btn:hover {
+    opacity: 0.9;
+}
+
+.hero-content {
+    max-width: 600px;
+
+    padding: 45px;
+
+    background-color: rgba(255, 255, 255, 0.90);
+
+    border-radius: 20px;
+
+    box-shadow: 0 10px 30px rgba(47, 65, 86, 0.12);
+}
+
+.hero-content h2 {
+    font-size: 55px;
+    line-height: 1.1;
+    color: #2F4156;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    color: #2F4156;
+    margin-bottom: 25px;
+}
+
+/* =========================
+   SAFETY MAP
+========================= */
+
+#map {
+    background-color: #FFFFFF;
+}
+
+#safety-map {
+    width: 90%;
+    height: 450px;
+
+    border-radius: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #C8D9E6;
+    border: 1px solid #567C8D;
+    color: #2F4156;
+}
+
+
+/* =========================
+   REPORT FORM
+========================= */
+
+#report {
+    background-color:  #F5EFEB;
+}
+
+#report-form {
+    width: 100%;
+    max-width: 600px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+
+    text-align: left;
+
+    background-color: #FFFFFF;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+#report-form label {
+    font-weight: bold;
+
+    margin-top: 10px;
+}
+
+#report-form input,
+#report-form select,
+#report-form textarea {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    font-family: inherit;
+}
+
+#report-form textarea {
+    resize: vertical;
+}
+
+#report-form input:focus,
+#report-form select:focus,
+#report-form textarea:focus {
+    outline: none;
+
+    border-color: #567C8D;
+}
+
+
+/* =========================
+   FORM BUTTONS
+========================= */
+
+#report-form button {
+    padding: 13px;
+
+    margin-top: 10px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: #2F4156;
+    color: #FFFFFF;
+
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+#report-form button:hover {
+    opacity: 0.9;
+    background-color: #567C8D;
+}
+
+
+/* =========================
+   MY REPORTS
+========================= */
+
+#my-reports {
+    background-color: white;
+}
+
+#reports-container {
+    width: 90%;
+    max-width: 800px;
+
+    min-height: 100px;
+
+    border: 1px dashed #bbb;
+
+    border-radius: 10px;
+
+    padding: 30px;
+
+    color: #777;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+#about {
+    background-color:#C8D9E6;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 30px;
+
+    text-align: center;
+
+    background-color: #2F4156;
+    
+    color: #FFFFFF;
+}
+
+footer p {
+    margin: 5px;
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    section {
+        padding: 60px 5%;
+    }
+
+    section h2 {
+        font-size: 32px;
+    }
+
+    #home h2 {
+        font-size: 40px;
+    }
+
+    .home-buttons {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .home-buttons button {
+        width: 100%;
+    }
+
+    #safety-map {
+        width: 100%;
+        height: 500px;
+        border-radius: 15px;
+        margin-top: 20px;
+    }
+
+    #report-form {
+        padding: 20px;
+    }
+}
+
