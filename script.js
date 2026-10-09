@@ -1,6 +1,3 @@
-/* =========================
-   SECTION NAVIGATION
-========================= */
 
 const sections = document.querySelectorAll("main > section");
 
@@ -20,15 +17,13 @@ function showSection(sectionId) {
         selectedSection.style.display =
             sectionId === "home" ? "block" : "flex";
     }
-
-    // Fix Leaflet map size when opening the map section
+    
     if (sectionId === "map") {
         setTimeout(function () {
             map.invalidateSize();
         }, 100);
     }
 }
-
 
 navigationButtons.forEach(function (button) {
 
@@ -42,15 +37,7 @@ navigationButtons.forEach(function (button) {
 
 });
 
-
-/* Show Home when the website first loads */
-
 showSection("home");
-
-
-/* =========================
-   LOCATION
-========================= */
 
 const locationButton = document.getElementById("location-btn");
 const locationInput = document.getElementById("location");
@@ -103,11 +90,6 @@ locationButton.addEventListener("click", function () {
 
 });
 
-
-/* =========================
-   REPORT FORM
-========================= */
-
 const reportForm = document.getElementById("report-form");
 const successMessage = document.getElementById("success-message");
 
@@ -146,7 +128,6 @@ reportForm.addEventListener("submit", function (event) {
 
     };
 
-
     const reports =
         JSON.parse(localStorage.getItem("reports")) || [];
 
@@ -172,16 +153,9 @@ reportForm.addEventListener("submit", function (event) {
     locationButton.textContent =
         "Use My Current Location";
 
-
-    // Add the newly submitted report to the map
     addReportToMap(report);
 
 });
-
-
-/* =========================
-   LEAFLET MAP
-========================= */
 
 const map = L.map("safety-map").setView(
     [28.6139, 77.2090],
@@ -195,11 +169,6 @@ L.tileLayer(
         attribution: "&copy; OpenStreetMap contributors"
     }
 ).addTo(map);
-
-
-/* =========================
-   INCIDENT MARKERS
-========================= */
 
 const heatPoints = [];
 
@@ -223,7 +192,6 @@ function getMarkerColor(incidentType) {
     return colors[incidentType] || "gray";
 }
 
-
 function addReportToMap(report) {
 
     if (
@@ -232,7 +200,6 @@ function addReportToMap(report) {
     ) {
         return;
     }
-
 
     const latitude = Number(report.latitude);
     const longitude = Number(report.longitude);
@@ -245,17 +212,11 @@ function addReportToMap(report) {
         return;
     }
 
-
-    /* Add point to heatmap */
-
     heatPoints.push([
         latitude,
         longitude,
         1
     ]);
-
-
-    /* Create marker */
 
     const markerColor =
         getMarkerColor(report.incidentType);
@@ -274,9 +235,6 @@ function addReportToMap(report) {
         }
     ).addTo(map);
 
-
-    /* Popup content */
-
     marker.bindPopup(`
         <strong>${report.incidentType}</strong>
         <br>
@@ -289,11 +247,6 @@ function addReportToMap(report) {
 
 }
 
-
-/* =========================
-   LOAD SAVED REPORTS
-========================= */
-
 const savedReports =
     JSON.parse(localStorage.getItem("reports")) || [];
 
@@ -303,11 +256,6 @@ savedReports.forEach(function (report) {
     addReportToMap(report);
 
 });
-
-
-/* =========================
-   HEATMAP
-========================= */
 
 const heatLayer = L.heatLayer(
     heatPoints,
