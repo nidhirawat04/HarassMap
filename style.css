@@ -15,11 +15,6 @@ body {
     line-height: 1.6;
 }
 
-
-/* =========================
-   HEADER
-========================= */
-
 header {
     display: flex;
     align-items: center;
@@ -49,17 +44,58 @@ nav {
 .nav-btn {
     background: none;
     border: none;
+
     font-family: inherit;
     font-size: 16px;
     font-weight: 500;
+
     color: #2F4156;
+
     cursor: pointer;
+
     padding: 8px 0;
+
     transition: color 0.3s ease;
 }
 
 .nav-btn:hover {
     color: #6c63ff;
+}
+
+#login-btn {
+    padding: 10px 20px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: #2F4156;
+    color: #FFFFFF;
+
+    cursor: pointer;
+}
+
+#login-btn:hover {
+    opacity: 0.9;
+}
+
+.open-section {
+    padding: 13px 22px;
+
+    border: none;
+    border-radius: 30px;
+
+    background-color: #2F4156;
+    color: #FFFFFF;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.open-section:hover {
+    background-color: #567C8D;
 }
 
 .back-btn {
@@ -82,22 +118,9 @@ nav {
     color: #567C8D;
 }
 
-#login-btn {
-    padding: 10px 20px;
-
-    border: none;
-    border-radius: 8px;
-
-   background-color: #2F4156;
-    color: #FFFFFF;
-
-    cursor: pointer;
+main section {
+    min-height: 500px;
 }
-
-#login-btn:hover {
-    opacity: 0.9;
-}
-
 
 #home {
     display: block;
@@ -105,177 +128,30 @@ nav {
     background-color: #F5EFEB;
 }
 
-
-/* =========================
-   HERO
-========================= */
+#map,
+#report,
+#about {
+    padding: 60px 10%;
+}
 
 .hero {
     min-height: 620px;
-
     display: flex;
     align-items: center;
-
     padding: 80px 10%;
 
     background-image:
         linear-gradient(
-            rgba(200, 217, 230, 0.55),
-            rgba(200, 217, 230, 0.55)
+            rgba(200, 217, 230, 0.10),
+            rgba(200, 217, 230, 0.10)
         ),
-        url("images/safety-bg.jpg");
+        url("pic.jpg");
 
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
 
     border-radius: 0 0 15% 5%;
-}
-
-.offer-section {
-    padding: 100px 10%;
-    text-align: center;
-    background: #FFFFFF;
-}
-
-.section-label {
-    color: #567C8D;
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 2px;
-}
-
-.offer-section h2 {
-    font-size: 42px;
-    color: #2F4156;
-    margin-bottom: 50px;
-}
-
-.offer-cards {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
-}
-
-.offer-card {
-    padding: 30px 20px;
-    background: #F5EFEB;
-    border-radius: 18px;
-}
-
-.offer-icon {
-    font-size: 35px;
-    margin-bottom: 15px;
-}
-
-.offer-card h3 {
-    color: #2F4156;
-}
-
-.offer-card p {
-    color: #567C8D;
-    line-height: 1.6;
-}
-
-.how-section {
-    padding: 100px 10%;
-    text-align: center;
-    background: #C8D9E6;
-}
-
-.steps {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-}
-
-.steps div {
-    padding: 25px;
-}
-
-.steps span {
-    font-size: 14px;
-    color: #567C8D;
-    font-weight: bold;
-}
-
-.steps h3 {
-    color: #2F4156;
-    font-size: 24px;
-}
-
-.steps p {
-    color: #2F4156;
-    line-height: 1.6;
-} 
-
-.home-cta {
-    padding: 100px 20px;
-    text-align: center;
-    background: #F5EFEB;
-}
-
-.home-cta h2 {
-    color: #2F4156;
-    font-size: 38px;
-    margin-bottom: 30px;
-}
-
-.home-cta button {
-    background: #2F4156;
-    color: white;
-    border: none;
-    padding: 15px 25px;
-    border-radius: 30px;
-    cursor: pointer;
-}
-
-@media (max-width: 800px) {
-
-    .offer-cards {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .steps {
-        grid-template-columns: 1fr;
-    }
-
-    .hero {
-        padding: 50px 6%;
-    }
-
-    .hero-content {
-        padding: 30px;
-    }
-}
-
-@media (max-width: 500px) {
-
-    .offer-cards {
-        grid-template-columns: 1fr;
-    }
-} 
-
-#emergency {
-    background-color: #F5EFEB;
-}
-
-#emergency-btn {
-    padding: 16px 28px;
-
-    border: none;
-    border-radius: 10px;
-
-    background-color: #C0392B;
-    color: #FFFFFF;
-
-    font-size: 17px;
-    font-weight: bold;
-
-    cursor: pointer;
-}
-
-#emergency-btn:hover {
-    opacity: 0.9;
 }
 
 .hero-content {
@@ -290,49 +166,229 @@ nav {
     box-shadow: 0 10px 30px rgba(47, 65, 86, 0.12);
 }
 
-.hero-content h2 {
+.hero-content h1 {
     font-size: 55px;
     line-height: 1.1;
+
     color: #2F4156;
+
     margin-bottom: 20px;
 }
 
 .hero-content p {
     font-size: 18px;
+
     color: #2F4156;
+
     margin-bottom: 25px;
 }
 
-/* =========================
-   SAFETY MAP
-========================= */
+.hero-buttons {
+    display: flex;
+    gap: 15px;
 
-#map {
+    flex-wrap: wrap;
+}
+
+.offer-section {
+    padding: 100px 10%;
+
+    text-align: center;
+
     background-color: #FFFFFF;
 }
 
-#safety-map {
-    width: 90%;
-    height: 450px;
+.section-label {
+    color: #567C8D;
 
-    border-radius: 15px;
+    font-size: 12px;
+    font-weight: bold;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    letter-spacing: 2px;
 
-    background-color: #C8D9E6;
-    border: 1px solid #567C8D;
-    color: #2F4156;
+    margin-bottom: 10px;
 }
 
+.offer-section h2,
+.how-section h2 {
+    font-size: 42px;
 
-/* =========================
-   REPORT FORM
-========================= */
+    color: #2F4156;
+
+    margin-bottom: 50px;
+}
+
+.offer-cards {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+.offer-card {
+    padding: 30px 20px;
+
+    background-color: #F5EFEB;
+
+    border-radius: 18px;
+}
+
+.offer-icon {
+    font-size: 35px;
+
+    margin-bottom: 15px;
+}
+
+.offer-card h3 {
+    color: #2F4156;
+
+    margin-bottom: 8px;
+}
+
+.offer-card p {
+    color: #567C8D;
+
+    line-height: 1.6;
+}
+
+.how-section {
+    padding: 100px 10%;
+
+    text-align: center;
+
+    background-color: #C8D9E6;
+}
+
+.steps {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 40px;
+}
+
+.steps div {
+    padding: 25px;
+}
+
+.steps span {
+    font-size: 14px;
+
+    color: #567C8D;
+
+    font-weight: bold;
+}
+
+.steps h3 {
+    color: #2F4156;
+
+    font-size: 24px;
+
+    margin: 8px 0;
+}
+
+.steps p {
+    color: #2F4156;
+
+    line-height: 1.6;
+}
+
+.home-cta {
+    padding: 100px 20px;
+
+    text-align: center;
+
+    background-color: #F5EFEB;
+}
+
+.home-cta h2 {
+    color: #2F4156;
+
+    font-size: 38px;
+
+    margin-bottom: 30px;
+}
+
+#map {
+    background-color: #FFFFFF;
+    min-height: 650px;
+    padding: 40px 8% 60px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    width: 100%;
+}
+
+.map-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#map h2 {
+    font-size: 36px;
+    line-height: 1.2;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+#map p {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#safety-map {
+    width: 100%;
+    max-width: 1000px;
+    height: 480px;
+    margin: 0 auto;
+
+    border-radius: 15px;
+    background-color: #C8D9E6;
+    border: 1px solid #567C8D;
+    overflow: hidden;
+}
+
+#map .back-btn {
+    align-self: flex-start;
+    margin-bottom: 10px;
+}
 
 #report {
-    background-color:  #F5EFEB;
+    background-color: #F5EFEB;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 40px 5% 60px;
+    width: 100%;
+}
+
+#report .back-btn {
+    align-self: flex-start;
+    margin-bottom: 20px;
+}
+
+#report h2 {
+    width: 100%;
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+#report > p {
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 20px;
 }
 
 #report-form {
@@ -341,18 +397,15 @@ nav {
 
     display: flex;
     flex-direction: column;
-
     gap: 10px;
 
     text-align: left;
-
     background-color: #FFFFFF;
-
     padding: 30px;
+    margin: 10px auto 0;
 
     border-radius: 15px;
-
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 5px 20px rgba(47, 65, 86, 0.12);
 }
 
 #report-form label {
@@ -389,20 +442,17 @@ nav {
     border-color: #567C8D;
 }
 
-
-/* =========================
-   FORM BUTTONS
-========================= */
-
 #report-form button {
     padding: 13px;
 
     margin-top: 10px;
 
     border: none;
+
     border-radius: 8px;
 
     background-color: #2F4156;
+
     color: #FFFFFF;
 
     font-size: 15px;
@@ -411,47 +461,59 @@ nav {
 }
 
 #report-form button:hover {
-    opacity: 0.9;
     background-color: #567C8D;
 }
 
+.location-help {
+    font-size: 13px;
 
-/* =========================
-   MY REPORTS
-========================= */
-
-#my-reports {
-    background-color: white;
+    color: #567C8D;
 }
 
-#reports-container {
-    width: 90%;
-    max-width: 800px;
+#success-message {
+    margin-top: 20px;
 
-    min-height: 100px;
+    color: #2F7D32;
 
-    border: 1px dashed #bbb;
-
-    border-radius: 10px;
-
-    padding: 30px;
-
-    color: #777;
+    font-weight: bold;
 }
-
-
-/* =========================
-   ABOUT
-========================= */
 
 #about {
-    background-color:#C8D9E6;
+    background-color: #C8D9E6;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    padding: 80px 10%;
+    min-height: 400px;
 }
 
+#about h2 {
+    font-size: 36px;
+    color: #2F4156;
+    margin-bottom: 25px;
+}
 
-/* =========================
-   FOOTER
-========================= */
+#about p {
+    max-width: 700px;
+    width: 100%;
+
+    font-size: 18px;
+    line-height: 1.8;
+    color: #2F4156;
+
+    margin-bottom: 20px;
+}
+
+#about i {
+    max-width: 700px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #567C8D;
+}
 
 footer {
     padding: 30px;
@@ -459,7 +521,7 @@ footer {
     text-align: center;
 
     background-color: #2F4156;
-    
+
     color: #FFFFFF;
 }
 
@@ -467,51 +529,78 @@ footer p {
     margin: 5px;
 }
 
+@media (max-width: 800px) {
 
-/* =========================
-   RESPONSIVE DESIGN
-========================= */
+    .offer-cards {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 50px 6%;
+        background-position: 65% center;
+    }
+
+    .hero-content {
+        padding: 30px;
+        width: 100%;
+    }
+
+    .hero-content h1 {
+        font-size: 42px;
+    }
+
+    .offer-section h2,
+    .how-section h2 {
+        font-size: 34px;
+    }
+}
 
 @media (max-width: 768px) {
 
     header {
         flex-direction: column;
+
         gap: 15px;
     }
 
     nav {
         gap: 15px;
+
         flex-wrap: wrap;
+
         justify-content: center;
     }
 
-    section {
-        padding: 60px 5%;
-    }
+    #map,
+#about {
+    padding: 60px 5%;
+}
 
-    section h2 {
-        font-size: 32px;
-    }
+#report {
+    padding: 35px 5%;
+}
 
-    #home h2 {
-        font-size: 40px;
-    }
-
-    .home-buttons {
+    .hero-buttons {
         flex-direction: column;
+
         width: 100%;
-        max-width: 300px;
     }
 
-    .home-buttons button {
+    .hero-buttons button {
         width: 100%;
     }
 
     #safety-map {
         width: 100%;
         height: 500px;
-        border-radius: 15px;
-        margin-top: 20px;
+    }
+
+    #report h2 {
+    font-size: 30px;
     }
 
     #report-form {
@@ -519,3 +608,25 @@ footer p {
     }
 }
 
+@media (max-width: 500px) {
+
+    .offer-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content {
+        padding: 25px;
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .home-cta h2 {
+        font-size: 30px;
+    }
+}
